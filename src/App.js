@@ -1,23 +1,31 @@
-import logo from './logo.svg';
+import Logo from './logo.png';
+import Money from './money.png';
+import Button from './components/UI/Button/Button';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mt-2">
+      <div className="d-flex align-items-center justify-content-center">
+        <img className="image mt-3 mb-3" src={Logo} alt="Logo" width="400" height="400" />
+      </div>
+      <div>
+        <div className="d-flex justify-content-around">
+          <img className="" src={Money} alt="Logo" width="200" height="200" />
+          <div>
+            <div className="d-flex align-items-center justify-content-center">
+              <Button onClick={() => {console.log("start")}}>Zacznij grę</Button>
+            </div>
+            <div className="d-flex align-items-center justify-content-center">
+              <Button onClick={() => {console.log("statystyki")}}>Statystyki</Button>
+            </div>
+            <div className="d-flex align-items-center justify-content-center">
+              <Button onClick={() => {console.log("dodaj")}}>Dodaj pytanie</Button>
+            </div>
+          </div>
+          <img className="" src={Money} alt="Logo" width="200" height="200" />
+        </div>
+      </div>
     </div>
   );
 }
