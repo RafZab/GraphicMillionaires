@@ -1,0 +1,14 @@
+.cards{
+  /* background: url('./gold2.jpg') no-repeat center fixed;
+  background-size: cover; */
+  background: linear-gradient(#cdcdd4, #cdcdd4);
+  border-color: azure;
+  border: 3px 3px 3px 3px;
+  border-radius: 20px;
+  width: 50%;
+}
+
+.cards h2 {
+  padding-top: 5%;
+  text-align: center;
+}
