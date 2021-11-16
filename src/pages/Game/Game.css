@@ -1,0 +1,41 @@
+.panel-game{
+    background: url(./maxresdefault.jpg) center;
+    height: 720px;
+    background-repeat: no-repeat;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.panel-question {
+    background: radial-gradient( #9198e5, #5460cc, #110e92, #020135);
+    border: 1px solid white;
+    border-radius: 20px;
+    text-align: center;
+    color:azure;
+}
+
+.panel-button {
+    background: radial-gradient( #9198e5, #5460cc, #110e92, #020135);
+    border: 1px solid white;
+    border-radius: 20px;
+    text-align: center;
+    color:azure;
+}
+
+.panel-button:hover{
+    background: radial-gradient( #8a90d1, #515bb6, #110f79, #020135);
+    border: 1px solid yellow;
+    color:azure;
+}
+
+.panel-win {
+    background: radial-gradient( #9198e5, #5460cc, #110e92, #020135);
+    height: 720px;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.colors-white {
+    text-align: center;
+    color:azure;
+}
