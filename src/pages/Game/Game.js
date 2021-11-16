@@ -84,10 +84,11 @@ const Game = (props) => {
 
     useEffect(() => {
         if (questions) {
-            let answers = [questions[countQuestion].correctAnswer, questions[countQuestion].incorrectAnswer1, questions[countQuestion].incorrectAnswer2, questions[countQuestion].incorrectAnswer3]
+            const answers = [questions[countQuestion].correctAnswer, questions[countQuestion].incorrectAnswer1, questions[countQuestion].incorrectAnswer2, questions[countQuestion].incorrectAnswer3]
+            const shuffledArray = answers.sort((a, b) => 0.5 - Math.random());
             const questionMake = {
                 asking: questions[countQuestion].asking,
-                answers: answers,
+                answers: shuffledArray,
             }
             setSQuestion(questionMake)
         }
