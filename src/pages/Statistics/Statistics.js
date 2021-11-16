@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 import axios from "../../axios";
 import Statistic from './components/Statistic/Statistic';
 
-const Statistics = (props) => {
+const Statistics = () => {
     const [statistics, setStatistics] = useState(null)
     const [loading, setLoading] = useState(true)
 
     const fetchStatistics = async () => {
         try {
             await axios.get('/result').then((response) => {
-                setStatistics(response.data)
+                setStatistics(response.data);
             });
-            setLoading(true)
+            setLoading(false)
         } catch {
             console.log("Error in fetch statistics!")
         }
@@ -21,15 +21,15 @@ const Statistics = (props) => {
         fetchStatistics()
     }, [])
 
-    const contextStatistics = loading ? null : statistics.Map((statistic, index) => {
+    const contextStatistics = loading ? null : statistics.map((statistic, index) =>
         <Statistic
             key={statistic.id}
-            number={index}
+            number={index + 1}
             nick={statistic.nick}
-            win={statistic.win}
+            win={statistic.winMoney}
             data={statistic.date}
         />
-    })
+    )
 
     return (
         <div className="container mt-3">
