@@ -1,0 +1,16 @@
+.color-white {
+    text-align: center;
+}
+
+.color-active {
+    background: radial-gradient( #ac7a2e, #ad803b, #9e773b, #020135);
+    text-align: center;
+}
+
+.color-text-g {
+    color:azure;
+}
+
+.color-text-ng {
+    color:yellow;
+}
