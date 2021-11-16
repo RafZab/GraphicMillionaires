@@ -66,6 +66,7 @@ const Game = (props) => {
     const [countQuestion, setCountQuestion] = useState(0)
     const [modalShow, setModalShow] = useState(false)
     const [loading, setLoading] = useState(true)
+    const [gameOver, setGameOver] = useState(false)
 
     const fetchQuestion = async () => {
         try {
@@ -98,6 +99,12 @@ const Game = (props) => {
         return null;
     }
 
+    const highlightCorrect = (answer) => {
+        if (answer === questions[countQuestion].correctAnswer)
+            return 'correct'
+        return 'game'
+    }
+
     const resignHandler = () => {
         if (countQuestion !== 0) {
             setMoney(sumWon.map(m => {
@@ -120,11 +127,12 @@ const Game = (props) => {
             setCountQuestion((prevState) => prevState + 1);
         }
         else {
-            if (countQuestion === 2)
+            setGameOver(true);
+            if (countQuestion >= 2)
                 setMoney(1000)
-            else if (countQuestion === 7)
+            else if (countQuestion >= 7)
                 setMoney(40000)
-            setModalShow(true);
+            setModalShow(true)
         }
     }
 
@@ -143,24 +151,24 @@ const Game = (props) => {
                         </Row>
                         <Row className="justify-content-md-center">
                             <Col xs lg="5">
-                                <div className="panel-button m-2" onClick={() => checkAnswerHandler(question.answers[0])}>
+                                <div className={`panel-button-${(!gameOver)  ? 'game' : highlightCorrect(question.answers[0])} m-2`} onClick={() => checkAnswerHandler(question.answers[0])}>
                                     <p><h5 className="m-1">A:</h5>{question.answers[0]}</p>
                                 </div>
                             </Col>
                             <Col xs lg="5">
-                                <div className="panel-button m-2" onClick={() => checkAnswerHandler(question.answers[1])}>
+                                <div className={`panel-button-${(!gameOver) ? 'game' : highlightCorrect(question.answers[1])} m-2`} onClick={() => checkAnswerHandler(question.answers[1])}>
                                     <p><h5 className="m-1">B:</h5>{question.answers[1]}</p>
                                 </div>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center">
                             <Col xs lg="5">
-                                <div className="panel-button m-2" onClick={() => checkAnswerHandler(question.answers[2])}>
+                                <div className={`panel-button-${(!gameOver) ? 'game' : highlightCorrect(question.answers[2])} m-2`} onClick={() => checkAnswerHandler(question.answers[2])}>
                                     <p><h5 className="m-1">C:</h5>{question.answers[2]}</p>
                                 </div>
                             </Col>
                             <Col xs lg="5">
-                                <div className="panel-button m-2" onClick={() => checkAnswerHandler(question.answers[3])}>
+                                <div className={`panel-button-${(!gameOver) ? 'game' : highlightCorrect(question.answers[3])} m-2`} onClick={() => checkAnswerHandler(question.answers[3])}>
                                     <p><h5 className="m-1">D:</h5>{question.answers[3]}</p>
                                 </div>
                             </Col>
@@ -188,7 +196,7 @@ const Game = (props) => {
                         </Table>
                         <Row className="justify-content-md-center">
                             <Col xs lg="5">
-                                <div className="panel-button m-2" onClick={resignHandler}>
+                                <div className="panel-button-game m-2" onClick={resignHandler}>
                                     <h5 className="m-1">Zrezygnuj</h5>
                                 </div>
                             </Col>
