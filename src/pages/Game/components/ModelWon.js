@@ -20,11 +20,13 @@ function ModelWon(props) {
                             <img src={fireworks} alt="fireworks" />
                         </Col>
                         <Col xs="6" >
-                            <div className="text-center">
-                                <h4 className="mt-5">Gratulacje {props.nick}!</h4>
-                                <p className={`mt-3`}>
-                                    Wygrywasz <strong> {props.money} PLN! </strong>
-                                </p>
+                            <div className="d-flex align-items-center justify-content-center">
+                                <div className="text-center">
+                                    <h4 className="mt-5">Gratulacje {props.nick}!</h4>
+                                    <p className={`mt-3`}>
+                                        Wygrywasz <strong> {props.money} PLN! </strong>
+                                    </p>
+                                </div>
                             </div>
                         </Col>
                         <Col xs="3">

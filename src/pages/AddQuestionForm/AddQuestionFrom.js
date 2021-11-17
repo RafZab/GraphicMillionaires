@@ -23,7 +23,7 @@ const AddQuestionForm = (props) => {
             incorrectAnswer2: incorrectAnswer2,
             incorrectAnswer3: incorrectAnswer3,
         }
-        const response = axios.post('/question', newQuestion)
+        axios.post('/question', newQuestion)
 
         history.push('/')
     }

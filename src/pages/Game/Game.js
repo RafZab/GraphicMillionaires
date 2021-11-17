@@ -108,15 +108,17 @@ const Game = (props) => {
 
     const resignHandler = () => {
         if (countQuestion !== 0) {
-            setMoney(sumWon.map(m => {
+            // eslint-disable-next-line array-callback-return
+            sumWon.map(m => {
                 if (m.question === countQuestion)
-                    return m.value
-            }))
+                    setMoney(m.value);
+            })
         }
         setModalShow(true)
     }
 
     const saveResult = async () => {
+        console.log(money)
         await axios.post('/result', { nick: nick, winMoney: money })
     }
 
@@ -128,16 +130,19 @@ const Game = (props) => {
 
     const checkAnswerHandler = (answer) => {
         if (answer === questions[countQuestion].correctAnswer) {
-            if (countQuestion === 11)
+            if (countQuestion === 11) {
+                setMoney(1_000_000)
                 setModalShow(true);
-            setCountQuestion((prevState) => prevState + 1);
+            }
+            else
+                setCountQuestion((prevState) => prevState + 1);
         }
         else {
             setGameOver(true);
-            if (countQuestion >= 2)
-                setMoney(1000)
-            else if (countQuestion >= 7)
-                setMoney(40000)
+            if (countQuestion >= 7)
+                setMoney(40_000)
+            else if (countQuestion >= 2)
+                setMoney(1_000)
             setModalShow(true)
         }
     }
@@ -150,7 +155,7 @@ const Game = (props) => {
                         <Row className="justify-content-md-center" style={{ marginTop: '370px' }}>
                             <Col xs lg="10">
                                 <div className="panel-question m-2">
-                                    <p className="m-1"><h5>Pytanie {countQuestion + 1}</h5></p>
+                                    <h5 className="m-1">Pytanie {countQuestion + 1}</h5>
                                     <p>{question.asking}</p>
                                 </div>
                             </Col>
@@ -158,24 +163,28 @@ const Game = (props) => {
                         <Row className="justify-content-md-center">
                             <Col xs lg="5">
                                 <div className={`panel-button-${(!gameOver) ? 'game' : highlightCorrect(question.answers[0])} m-2`} onClick={() => checkAnswerHandler(question.answers[0])}>
-                                    <p><h5 className="m-1">A:</h5>{question.answers[0]}</p>
+                                    <h5 className="m-1">A:</h5>
+                                    <p>{question.answers[0]}</p>
                                 </div>
                             </Col>
                             <Col xs lg="5">
                                 <div className={`panel-button-${(!gameOver) ? 'game' : highlightCorrect(question.answers[1])} m-2`} onClick={() => checkAnswerHandler(question.answers[1])}>
-                                    <p><h5 className="m-1">B:</h5>{question.answers[1]}</p>
+                                    <h5 className="m-1">B:</h5>
+                                    <p>{question.answers[1]}</p>
                                 </div>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center">
                             <Col xs lg="5">
                                 <div className={`panel-button-${(!gameOver) ? 'game' : highlightCorrect(question.answers[2])} m-2`} onClick={() => checkAnswerHandler(question.answers[2])}>
-                                    <p><h5 className="m-1">C:</h5>{question.answers[2]}</p>
+                                    <h5 className="m-1">C:</h5>
+                                    <p>{question.answers[2]}</p>
                                 </div>
                             </Col>
                             <Col xs lg="5">
                                 <div className={`panel-button-${(!gameOver) ? 'game' : highlightCorrect(question.answers[3])} m-2`} onClick={() => checkAnswerHandler(question.answers[3])}>
-                                    <p><h5 className="m-1">D:</h5>{question.answers[3]}</p>
+                                    <h5 className="m-1">D:</h5>
+                                    <p>{question.answers[3]}</p>
                                 </div>
                             </Col>
                         </Row>
