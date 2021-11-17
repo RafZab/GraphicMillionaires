@@ -1,0 +1,9 @@
+.text-back {
+    text-decoration: none;
+    color: rgb(63, 60, 60);
+}
+
+.text-back:hover {
+    text-decoration: underline;
+    color: rgb(36, 34, 34);
+}
