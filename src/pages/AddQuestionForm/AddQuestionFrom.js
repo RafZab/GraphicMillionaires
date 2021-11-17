@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { useHistory } from "react-router";
+import Alert from 'react-bootstrap/Alert'
 import ButtonInput from "../../components/UI/ButtonInput/ButtonInput";
 import Input from "../../components/UI/Input/Input";
 import axios from "../../axios";
@@ -14,18 +15,25 @@ const AddQuestionForm = (props) => {
     const [incorrectAnswer1, setIncorrectAnswer1] = useState('')
     const [incorrectAnswer2, setIncorrectAnswer2] = useState('')
     const [incorrectAnswer3, setIncorrectAnswer3] = useState('')
+    const [isValid, setIsValid] = useState(true)
+
+
 
     const submitHandler = () => {
-        const newQuestion = {
-            asking: question,
-            correctAnswer: correctAnswer,
-            incorrectAnswer1: incorrectAnswer1,
-            incorrectAnswer2: incorrectAnswer2,
-            incorrectAnswer3: incorrectAnswer3,
-        }
-        axios.post('/question', newQuestion)
+        if (question.trim() && correctAnswer.trim() && incorrectAnswer1.trim() && incorrectAnswer2.trim() && incorrectAnswer3.trim()) {
+            const newQuestion = {
+                asking: question,
+                correctAnswer: correctAnswer,
+                incorrectAnswer1: incorrectAnswer1,
+                incorrectAnswer2: incorrectAnswer2,
+                incorrectAnswer3: incorrectAnswer3,
+            }
+            axios.post('/question', newQuestion)
 
-        history.push('/')
+            history.push('/')
+        }
+        else
+            setIsValid(false)
     }
 
     return (
@@ -60,6 +68,13 @@ const AddQuestionForm = (props) => {
                                 setIncorrectAnswer3(event.target.value);
                             }}>Nieprawidłowa odpowiedź</Input>
                         </div>
+                        {isValid ? null : (
+                            <Alert className="m-4" variant="danger">
+                                <p>
+                                    Uzupełnij wszystkie pola!
+                                </p>
+                            </Alert>
+                        )}
                     </div>
                     <div className="d-flex align-items-center justify-content-center">
                         <ButtonInput type="submit" onClick={submitHandler}>Zatwierdź</ButtonInput>
