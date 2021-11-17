@@ -27,7 +27,7 @@ const Statistics = () => {
             number={index + 1}
             nick={statistic.nick}
             win={statistic.winMoney}
-            data={statistic.date}
+            date={statistic.date}
         />
     )
 
