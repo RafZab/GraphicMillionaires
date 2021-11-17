@@ -62,6 +62,7 @@ const Game = (props) => {
     const history = useHistory();
     const [questions, setSQuestions] = useState(null)
     const [question, setSQuestion] = useState(null)
+    const [nick, setNick] = useState("Gosia")
     const [money, setMoney] = useState(0)
     const [countQuestion, setCountQuestion] = useState(0)
     const [modalShow, setModalShow] = useState(false)
@@ -115,7 +116,12 @@ const Game = (props) => {
         setModalShow(true)
     }
 
+    const saveResult = async () => {
+        await axios.post('/result', { nick: nick, winMoney: money })
+    }
+
     const modalHideHandler = () => {
+        saveResult();
         setModalShow(false);
         history.push('/');
     }
