@@ -1,5 +1,5 @@
-import { Modal, Button } from 'react-bootstrap';
-
+import { Modal, Button, Row, Col } from 'react-bootstrap';
+import fireworks from './fireworks.gif'
 function ModelWon(props) {
     return (
         <div>
@@ -15,15 +15,25 @@ function ModelWon(props) {
                     </Modal.Title>
                 </Modal.Header>
                 <Modal.Body className="bg-light">
-                    <div className="text-center">
-                        <h4>Gratulacje!</h4>
-                        <p>
-                            Wygrałeś {props.money}
-                        </p>
-                    </div>
+                    <Row>
+                        <Col xs='3' >
+                            <img src={fireworks} alt="fireworks" />
+                        </Col>
+                        <Col xs="6" >
+                            <div className="text-center">
+                                <h4 className="mt-5">Gratulacje {props.nick}!</h4>
+                                <p className={`mt-3`}>
+                                    Wygrywasz <strong> {props.money} PLN! </strong>
+                                </p>
+                            </div>
+                        </Col>
+                        <Col xs="3">
+                            <img src={fireworks} alt="fireworks" />
+                        </Col>
+                    </Row>
                 </Modal.Body>
                 <Modal.Footer className="bg-light">
-                    <Button onClick={props.onHide}>Close</Button>
+                    <Button onClick={props.onHide}>Zamknij</Button>
                 </Modal.Footer>
             </Modal>
 
