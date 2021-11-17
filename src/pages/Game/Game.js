@@ -157,7 +157,7 @@ const Game = (props) => {
                         </Row>
                         <Row className="justify-content-md-center">
                             <Col xs lg="5">
-                                <div className={`panel-button-${(!gameOver)  ? 'game' : highlightCorrect(question.answers[0])} m-2`} onClick={() => checkAnswerHandler(question.answers[0])}>
+                                <div className={`panel-button-${(!gameOver) ? 'game' : highlightCorrect(question.answers[0])} m-2`} onClick={() => checkAnswerHandler(question.answers[0])}>
                                     <p><h5 className="m-1">A:</h5>{question.answers[0]}</p>
                                 </div>
                             </Col>
@@ -211,6 +211,7 @@ const Game = (props) => {
                 </Col>
             </Row>
             <ModelWon
+                nick={nick}
                 money={money}
                 show={modalShow}
                 onHide={modalHideHandler} />
