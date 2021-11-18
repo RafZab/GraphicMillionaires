@@ -84,6 +84,11 @@ const Game = () => {
         const nickJson = sessionStorage.getItem('nick')
         const sessionNick = JSON.parse(nickJson)
         setNick(sessionNick);
+        const saveJson = sessionStorage.getItem('save')
+        const isSave = JSON.parse(saveJson)
+        if (!isSave) {
+            sessionStorage.removeItem("nick")
+        }
     }
 
     useEffect(() => {
