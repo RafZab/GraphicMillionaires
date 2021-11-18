@@ -16,7 +16,7 @@ function Home() {
                     <img className="" src={Money} alt="Logo" width="200" height="200" />
                     <div>
                         <div className="d-flex align-items-center justify-content-center">
-                            <Button onClick={() => { history.push('/game') }}>Zacznij grę</Button>
+                            <Button onClick={() => { history.push('/nick') }}>Zacznij grę</Button>
                         </div>
                         <div className="d-flex align-items-center justify-content-center">
                             <Button onClick={() => { history.push('/statistics') }}>Statystyki</Button>

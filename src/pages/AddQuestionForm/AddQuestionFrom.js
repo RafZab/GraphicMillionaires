@@ -40,7 +40,6 @@ const AddQuestionForm = (props) => {
         <div className="container mt-3 mb-3">
             <div className="d-flex align-items-center justify-content-center">
                 <div className="cards">
-                    {/* <form> */}
                     <div>
                         <h2>Dodaj pytanie</h2>
                         <div className="d-flex align-items-center justify-content-center">
@@ -80,7 +79,6 @@ const AddQuestionForm = (props) => {
                         <ButtonInput type="submit" onClick={submitHandler}>Zatwierdź</ButtonInput>
                         <ButtonInput type="button" onClick={() => { history.push('/') }}>Wróć</ButtonInput>
                     </div>
-                    {/* </form> */}
                 </div>
 
             </div>

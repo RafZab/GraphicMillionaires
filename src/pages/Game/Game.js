@@ -58,11 +58,11 @@ const sumWon = [
     }
 ]
 
-const Game = (props) => {
+const Game = () => {
     const history = useHistory();
     const [questions, setSQuestions] = useState(null)
     const [question, setSQuestion] = useState(null)
-    const [nick, setNick] = useState("Gosia")
+    const [nick, setNick] = useState("")
     const [money, setMoney] = useState(0)
     const [countQuestion, setCountQuestion] = useState(0)
     const [modalShow, setModalShow] = useState(false)
@@ -80,8 +80,15 @@ const Game = (props) => {
         }
     }
 
+    const getNick = () => {
+        const nickJson = sessionStorage.getItem('nick')
+        const sessionNick = JSON.parse(nickJson)
+        setNick(sessionNick);
+    }
+
     useEffect(() => {
         fetchQuestion()
+        getNick()
     }, [])
 
     useEffect(() => {
@@ -98,6 +105,10 @@ const Game = (props) => {
 
     if (loading) {
         return null;
+    }
+
+    if (!nick) {
+        history.push('/nick')
     }
 
     const highlightCorrect = (answer) => {

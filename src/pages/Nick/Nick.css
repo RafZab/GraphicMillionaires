@@ -1,0 +1,26 @@
+.center-vertical{
+    margin-top: 50%;
+}
+
+.panel-nick {
+    color:azure;
+    margin-top: 15%;
+    background: radial-gradient( #9198e5, #5460cc, #110e92, #020135);
+    width: 40%;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+
+.panel-button-game {
+    background: radial-gradient( #9198e5, #5460cc, #110e92, #020135);
+    border: 1px solid white;
+    border-radius: 20px;
+    text-align: center;
+    color:azure;
+}
+
+.panel-button-game:hover{
+    background: radial-gradient( #8a90d1, #515bb6, #110f79, #020135);
+    border: 1px solid yellow;
+    color:azure;
+}
