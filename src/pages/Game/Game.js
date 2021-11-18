@@ -134,7 +134,6 @@ const Game = () => {
     }
 
     const saveResult = async () => {
-        console.log(money)
         await axios.post('/result', { nick: nick, winMoney: money })
     }
 

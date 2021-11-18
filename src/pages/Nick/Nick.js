@@ -18,6 +18,7 @@ const Nick = () => {
 
     useEffect(() => {
         checkSaveNick();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     const submitHandler = (e) => {
