@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# ConsoleMillionaire
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of contents
+* [General info](#main-assumptions)
+* [Description of functionality](#description-of-functionality)
+* [How to install](#how-to-install)
+* [Technologies](#technologies)
+* [User manual](#user-manual)
+* [Rate](#rate)
+* [Photos](#photos)
+* [License](#license)
 
-## Available Scripts
+## Main assumptions
 
-In the project directory, you can run:
+A game designed to resemble the famous TV game show millionaires, where
+they can feel like participants in the game and have the opportunity 
+to try our hand at this game.
 
-### `npm start`
+## Description of functionality
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  1. Play the game of millionaires
+      - When we press the play button in the main menu, the window is refreshed and we are shown a game which consists in choosing the right answer A, B, C, D for 12 questions. On the right side there are basic information such as: how much we have to win, how much we have won and what is the guaranteed sum. After giving the correct answer, we continue to play, but after giving the wrong answer, the game ends.
+  2. View statistics
+      - In the main menu you can see our statistics, after clicking on the "Statistics" button you can see our top 10 games in the table. The table has columns such as position, username, winnings and date.
+  4. Add your own questions to the game
+      - After clicking the "add question" button, a validated form for adding a question is displayed, so if the form has any errors, we will be informed about it.
+  5. Enter your player name
+      - Before we go to the main menu of the game, we need to enter your username so that we can address the user by name, for the better experience users. Name can be save in session.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How to install:
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Technologies
+Frontend
+ - axios: 0.24.0,
+ - bootstrap: 5.1.3,
+ - react: 17.0.2,
+ - react-bootstrap: 2.0.2,
+ - react-dom: 17.0.2,
+ - react-router-dom: 5.3.0,
+ - react-scripts: 4.0.3,
+ - sass: 1.43.4,
+ - web-vitals: 1.1.2
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Backend
+  - Entity Framework Core: 5.0.11
+  - Entity Framework Core SqlServer: 5.0.11
+  - Entity Framework Core Tools: 5.0.11
+  - Auto Mapper 8.1.1
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## User manual
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Rate
+The game I created has a great potential for development. I like it visually and I would recommend it 
+to my friends and lost a lot of time in it expanding my knowledge in a nice and interesting way.
+## Photos
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![image](https://user-images.githubusercontent.com/65453222/142425963-0a60a26c-322f-445c-8f4b-5e05881b724e.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![image](https://user-images.githubusercontent.com/65453222/142426478-2676b74e-fedd-4fe7-a1aa-2896b5b56b71.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![image](https://user-images.githubusercontent.com/65453222/142426678-d92cef61-6524-4c53-b895-dc6529175181.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![image](https://user-images.githubusercontent.com/65453222/142426060-b782168a-d404-4b37-9ab8-e2595b8aa21c.png)
 
-## Learn More
+![image](https://user-images.githubusercontent.com/65453222/142426169-afb096f3-3397-4a79-b60a-09d364d8f1ed.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
