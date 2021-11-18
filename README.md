@@ -1,10 +1,11 @@
-# ConsoleMillionaire
-
+# Millionaires GRAPHIC MODE
+See the game millionaires in the <a href="https://github.com/RafZab/ConsoleMillionaire" target="_blank">console version</a>.
 ## Table of contents
 * [General info](#main-assumptions)
 * [Description of functionality](#description-of-functionality)
 * [How to install](#how-to-install)
 * [Technologies](#technologies)
+* [Endpoints](#endpoints)
 * [User manual](#user-manual)
 * [Rate](#rate)
 * [Photos](#photos)
@@ -22,17 +23,19 @@ to try our hand at this game.
       - When we press the play button in the main menu, the window is refreshed and we are shown a game which consists in choosing the right answer A, B, C, D for 12 questions. On the right side there are basic information such as: how much we have to win, how much we have won and what is the guaranteed sum. After giving the correct answer, we continue to play, but after giving the wrong answer, the game ends.
   2. View statistics
       - In the main menu you can see our statistics, after clicking on the "Statistics" button you can see our top 10 games in the table. The table has columns such as position, username, winnings and date.
-  4. Add your own questions to the game
+  3. Add your own questions to the game
       - After clicking the "add question" button, a validated form for adding a question is displayed, so if the form has any errors, we will be informed about it.
-  5. Enter your player name
-      - Before we go to the main menu of the game, we need to enter your username so that we can address the user by name, for the better experience users. Name can be save in session.
+  4. Enter your player name
+      - Before we go to the main menu of the game, we need to enter your username so that we can address the user by name, for the better experience users. Name can be save in session for better user expirence.
+  5. Saves date in datebase 
+      - Saving game results and questions
 
 ## How to install:
 
 
 
 ## Technologies
-Frontend
+Frontend React
  - axios: 0.24.0,
  - bootstrap: 5.1.3,
  - react: 17.0.2,
@@ -43,14 +46,31 @@ Frontend
  - sass: 1.43.4,
  - web-vitals: 1.1.2
 
-Backend
+Backend .Net 5
   - Entity Framework Core: 5.0.11
   - Entity Framework Core SqlServer: 5.0.11
   - Entity Framework Core Tools: 5.0.11
   - Auto Mapper 8.1.1
 
-## User manual
+## Endpoints
+Returns a random list of 12 questions
+ - [Get] {yourURL}/api/question 
 
+Saves a new question to the data
+- [Post] {yourURL}/api/question 
+
+![image](https://user-images.githubusercontent.com/65453222/142458462-7de07a18-7ea6-4ca8-88e3-44da490ef39a.png)
+
+Returns the top 10 scores for the entire game
+ - [Get] {yourURL}/api/result
+
+Saves a new scores to the data
+- [Post] {yourURL}/api/result 
+
+![image](https://user-images.githubusercontent.com/65453222/142458370-9f490380-dc34-46d5-8ee7-4bcf32278a5a.png)
+
+## User manual
+The user moves around the application with the mouse by clicking on the buttons.
 
 ## Rate
 The game I created has a great potential for development. I like it visually and I would recommend it 
