@@ -31,7 +31,23 @@ to try our hand at this game.
       - Saving game results and questions
 
 ## How to install:
+Open terminal and: 
 
+1. git clone https://github.com/RafZab/GraphicMillionaires.git
+2. cd GraphicMillionaires/Backend/Millionaire
+3. dotnet run
+4. cd ../../Frontend/ 
+5. npm install 
+6. npm start
+7. cd GraphicMillionaires/Backend/Millionaire
+
+Important !
+
+For the application to work properly before starting the game, you need to add 12 questions!
+
+If the backend starts at a different address than port 5001, you have to change the path in Frontend \ src \ axios.js
+
+![image](https://user-images.githubusercontent.com/65453222/142466424-4825f7e1-6820-4350-827f-096f0909a837.png)
 
 
 ## Technologies
