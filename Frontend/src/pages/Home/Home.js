@@ -3,9 +3,15 @@ import Money from '../../money.png';
 import Button from '../../components/UI/Button/Button';
 import './Home.css';
 import { useHistory } from 'react-router';
+import audio from './over.mp3'
 
 function Home() {
     const history = useHistory()
+
+    const playAudio = () => {
+        new Audio(audio).play();
+      }
+
     return (
         <div className="container mt-2">
             <div className="d-flex align-items-center justify-content-center">
@@ -16,7 +22,7 @@ function Home() {
                     <img className="" src={Money} alt="Logo" width="200" height="200" />
                     <div>
                         <div className="d-flex align-items-center justify-content-center">
-                            <Button onClick={() => { history.push('/nick') }}>Zacznij grę</Button>
+                            <Button onClick={() => { playAudio(); history.push('/nick');}}>Zacznij grę</Button>
                         </div>
                         <div className="d-flex align-items-center justify-content-center">
                             <Button onClick={() => { history.push('/statistics') }}>Statystyki</Button>
